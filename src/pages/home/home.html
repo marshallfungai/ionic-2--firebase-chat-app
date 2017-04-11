@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ata Bilişim Chat
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  The world is ours....
+  <ion-card *ngFor="#items of items  | async">
+    <ion-header><ion-icon name="chatbubbles"></ion-icon> {{items.name}}</ion-header>
+    <ion-card-content >{{items.message}}</ion-card-content>
+  </ion-card>
+</ion-content>
+<ion-footer-bar>
+  <ion-input *ngIf="!name">
+    <button (click)="login()">Login Lutfen!!</button>
+  </ion-input>
+  <ion-input *ngIf="name">
+    <input type="text" [(ngModel)]="chatBox" placeholder="Work Hard, Play Hard!!">
+    <button ion-button icon-only (click)="chatSend(chatBox)"> <ion-icon name="finger-print"></ion-icon></button>
+  </ion-input>
+
+</ion-footer-bar>
