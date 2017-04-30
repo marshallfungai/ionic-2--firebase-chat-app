@@ -5,21 +5,36 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-
-<ion-content padding>
+<ion-content *ngIf="!name" padding >
   The world is ours....
-  <ion-card *ngFor="#items of items  | async">
-    <ion-header><ion-icon name="chatbubbles"></ion-icon> {{items.name}}</ion-header>
-    <ion-card-content >{{items.message}}</ion-card-content>
-  </ion-card>
-</ion-content>
-<ion-footer-bar>
-  <ion-input *ngIf="!name">
-    <button (click)="login()">Login Lutfen!!</button>
-  </ion-input>
-  <ion-input *ngIf="name">
-    <input type="text" [(ngModel)]="chatBox" placeholder="Work Hard, Play Hard!!">
-    <button ion-button icon-only (click)="chatSend(chatBox)"> <ion-icon name="finger-print"></ion-icon></button>
-  </ion-input>
+  Log In To view messages
 
-</ion-footer-bar>
+</ion-content>
+<ion-content *ngIf="name" padding >
+
+  <ion-list padding>
+    <ion-item *ngFor="let item of items  | async">
+      <ion-label><ion-icon name="chatbubbles"></ion-icon> {{item.name}}</ion-label>
+      <p>{{item.message}}</p>
+
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+
+    <button *ngIf="!name" (click)="login()">Login Lutfen!!</button>
+
+    <input *ngIf="name" type="text" [(ngModel)]="chatBox" placeholder="Work Hard, Play Hard!!">
+    <!-- <ion-label *ngIf="name" fixed>Work Hard, Play Hard!!</ion-label>
+    <ion-input *ngIf="name" type="text" [(ngModel)]="chatBox" value=""></ion-input> -->
+    <button ion-button (click)="chatSend(chatBox)">
+      <ion-icon *ngIf="name" name="finger-print"></ion-icon>
+    </button>
+    <ion-content *ngIf="!name" padding >
+      The world is ours....
+      Log In To view messages
+
+    </ion-content>
+
+
+</ion-footer>
