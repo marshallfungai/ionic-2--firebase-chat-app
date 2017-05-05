@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import {Injectable} from "angular2/core";
+import { Component, ElementRef } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AngularFire, AuthProviders, AuthMethods,FirebaseListObservable } from 'angularfire2';
 
@@ -13,11 +12,13 @@ export class HomePage {
   items: FirebaseListObservable<any>;
   name: any;
   chatBox: string = '';
+  scrollelement: string;
 
-  constructor(public navCtrl: NavController, public af: AngularFire) {
+
+  constructor(public navCtrl: NavController, public af: AngularFire, public el: ElementRef) {
       this.items = af.database.list('/messages',{
         query: {
-          limitToLast: 5
+          limitToLast: 10
         }
       });
 
@@ -26,6 +27,12 @@ export class HomePage {
           this.name = auth;
         }
       });
+
+      this.scrollelement = el.nativeElement('scroll');
+
+      console.log(this.scrollelement);
+
+
   }
 
   login() {

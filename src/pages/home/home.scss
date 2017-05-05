@@ -1,3 +1,58 @@
 page-home {
 
 }
+
+ion-footer {
+      background: #131b3a;
+}
+
+// borrowed CSS
+input#message {
+    background:none;
+    border:none;
+    // border-bottom: 1px solid #4C4C4C;
+    outline:none;
+    box-shadow:none;
+    color: #fff;
+    font-size:1.6em;
+    font-weight:300;
+    margin-bottom: 0em;
+    padding:1.2em 0;
+    padding-left: 30px;
+    width: 75%;
+    float: left;
+
+}
+
+footer button ion-icon {
+  // font-size: 40px;
+}
+
+.chat-container {
+    display:block;
+    width:100%;
+}
+// .chat-container:nth-child(4) {
+//     opacity: .8;
+// }
+// .chat-container:nth-child(3) {
+//     opacity: .6;
+// }
+// .chat-container:nth-child(2) {
+//     opacity: .4;
+// }
+
+.chat-container .name {
+    text-transform: uppercase;
+    font-weight:bold;
+    color:#816A98;
+    font-size:.8em;
+    letter-spacing:2px;
+}
+
+.chat-container p {
+      // background:#323035;
+    padding:1.1em;
+    color:white;
+    margin: 5px 0 10px 0;
+}

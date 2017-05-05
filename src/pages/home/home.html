@@ -1,40 +1,54 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar >
     <ion-title>
       Ata Bilişim Chat
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content *ngIf="!name" padding >
-  The world is ours....
-  Log In To view messages
+<ion-content class="chat-container" *ngIf="!name" padding >
+  <ion-card>
 
+  <ion-card-header>
+    The world is ours....
+  </ion-card-header>
+
+  <ion-card-content>
+    <!-- Add card content here! -->
+    PlAY HARD , WORK HARD.... <br>
+
+  </ion-card-content>
+
+</ion-card>
+<button ion-button block color="primary" *ngIf="!name" (click)="login()">Login Lutfen!!</button>
 </ion-content>
-<ion-content *ngIf="name" padding >
+<ion-content class="chat-container" *ngIf="name" padding >
 
-  <ion-list padding>
+  <!-- <ion-list padding>
     <ion-item *ngFor="let item of items  | async">
-      <ion-label><ion-icon name="chatbubbles"></ion-icon> {{item.name}}</ion-label>
+      <ion-label class="name"> {{item.name}}</ion-label>
       <p>{{item.message}}</p>
 
     </ion-item>
-  </ion-list>
+  </ion-list> -->
+
+  <ion-card id="scroll" *ngFor="let item of items  | async">
+
+  <ion-card-header>
+    {{item.name}}
+    <hr>
+  </ion-card-header>
+
+  <ion-card-content>
+    {{item.message}}
+
+  </ion-card-content>
+
+</ion-card>
 </ion-content>
+
 <ion-footer>
 
-    <button *ngIf="!name" (click)="login()">Login Lutfen!!</button>
-
-    <input *ngIf="name" type="text" [(ngModel)]="chatBox" placeholder="Work Hard, Play Hard!!">
-    <!-- <ion-label *ngIf="name" fixed>Work Hard, Play Hard!!</ion-label>
-    <ion-input *ngIf="name" type="text" [(ngModel)]="chatBox" value=""></ion-input> -->
-    <button ion-button (click)="chatSend(chatBox)">
-      <ion-icon *ngIf="name" name="finger-print"></ion-icon>
-    </button>
-    <ion-content *ngIf="!name" padding >
-      The world is ours....
-      Log In To view messages
-
-    </ion-content>
-
+    <input id="message" *ngIf="name" type="text" [(ngModel)]="chatBox" placeholder="Type Message">
+    <button ion-button color="primary" *ngIf="name"  (click)="chatSend(chatBox)"><ion-icon name="send"></ion-icon></button>
 
 </ion-footer>
