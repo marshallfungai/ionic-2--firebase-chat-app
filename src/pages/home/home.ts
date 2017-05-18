@@ -1,4 +1,4 @@
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef,ComponentRef, Injector } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AngularFire, AuthProviders, AuthMethods,FirebaseListObservable } from 'angularfire2';
 
@@ -12,7 +12,8 @@ export class HomePage {
   items: FirebaseListObservable<any>;
   name: any;
   chatBox: string = '';
-  scrollelement: string;
+  scrollElement: string;
+  @ViewChild('scroll') scroll;
 
 
   constructor(public navCtrl: NavController, public af: AngularFire, public el: ElementRef) {
@@ -28,9 +29,9 @@ export class HomePage {
         }
       });
 
-      this.scrollelement = el.nativeElement('scroll');
+      //this.scrollElement = el.nativeElement('scroll');
 
-      console.log(this.scrollelement);
+      console.log(el);
 
 
   }

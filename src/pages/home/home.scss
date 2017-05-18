@@ -31,6 +31,7 @@ footer button ion-icon {
 .chat-container {
     display:block;
     width:100%;
+    background: linear-gradient(to bottom, rgba(243,226,199,1) 0%, rgba(193,158,103,1) 31%, rgba(182,141,76,1) 77%, rgba(233,212,179,1) 100%);
 }
 // .chat-container:nth-child(4) {
 //     opacity: .8;
@@ -41,6 +42,10 @@ footer button ion-icon {
 // .chat-container:nth-child(2) {
 //     opacity: .4;
 // }
+
+.chat-container ion-card:last-child {
+  margin-bottom: 20px;
+}
 
 .chat-container .name {
     text-transform: uppercase;
@@ -55,4 +60,12 @@ footer button ion-icon {
     padding:1.1em;
     color:white;
     margin: 5px 0 10px 0;
+}
+.login-logo {
+  margin: 60px auto;
+  max-width: 60%;
+}
+.transparent-bg {
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0);
 }

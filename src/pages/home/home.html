@@ -6,15 +6,17 @@
   </ion-navbar>
 </ion-header>
 <ion-content class="chat-container" *ngIf="!name" padding >
-  <ion-card>
+  <ion-card class="transparent-bg">
 
-  <ion-card-header>
-    The world is ours....
+  <ion-card-header text-center>
+    <h3>Play Hard, Work Hard</h3>
+    <hr>
   </ion-card-header>
 
-  <ion-card-content>
+  <ion-card-content text-center>
     <!-- Add card content here! -->
-    PlAY HARD , WORK HARD.... <br>
+
+    <img class="login-logo" src="../assets/img/login-logo.png" alt="">
 
   </ion-card-content>
 
@@ -31,7 +33,7 @@
     </ion-item>
   </ion-list> -->
 
-  <ion-card id="scroll" *ngFor="let item of items  | async">
+  <ion-card #scroll id="scroll" class="scroll"  *ngFor="let item of items  | async">
 
   <ion-card-header>
     {{item.name}}
