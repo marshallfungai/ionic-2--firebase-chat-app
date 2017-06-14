@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar >
-    <ion-title>
-      Ata Bilişim Chat
+    <ion-title class="title">
+      ATA BİlİŞİM Sohbet
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -9,7 +9,7 @@
   <ion-card class="transparent-bg">
 
   <ion-card-header text-center>
-    <h3>Play Hard, Work Hard</h3>
+    <h3 class="slogan">Play Hard, Work Hard</h3>
     <hr>
   </ion-card-header>
 
@@ -23,7 +23,7 @@
 </ion-card>
 <button ion-button block color="primary" *ngIf="!name" (click)="login()">Login Lutfen!!</button>
 </ion-content>
-<ion-content class="chat-container" *ngIf="name" padding >
+<ion-content #scroll id="scroll" class="chat-container" *ngIf="name" padding >
 
   <!-- <ion-list padding>
     <ion-item *ngFor="let item of items  | async">
@@ -33,15 +33,15 @@
     </ion-item>
   </ion-list> -->
 
-  <ion-card #scroll id="scroll" class="scroll"  *ngFor="let item of items  | async">
+  <ion-card  class="scroll"  *ngFor="let item of items  | async" >
 
-  <ion-card-header>
+  <ion-card-header class="name">
     {{item.name}}
     <hr>
   </ion-card-header>
 
   <ion-card-content>
-    {{item.message}}
+    <p>{{item.message}}</p>
 
   </ion-card-content>
 

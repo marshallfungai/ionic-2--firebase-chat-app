@@ -28,38 +28,67 @@ footer button ion-icon {
   // font-size: 40px;
 }
 
+.title {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #387ef5;
+  font-size: .7em;
+  letter-spacing: 4px;
+}
+
 .chat-container {
     display:block;
     width:100%;
-    background: linear-gradient(to bottom, rgba(243,226,199,1) 0%, rgba(193,158,103,1) 31%, rgba(182,141,76,1) 77%, rgba(233,212,179,1) 100%);
+    background: rgba(73,155,234,1);
+    // background: linear-gradient(to bottom, rgba(243,226,199,1) 0%, rgba(193,158,103,1) 31%, rgba(182,141,76,1) 77%, rgba(233,212,179,1) 100%);
+    background: radial-gradient(ellipse at center, rgba(73,155,234,1) 0%, rgba(19,27,58,0.91) 100%);
 }
-// .chat-container:nth-child(4) {
-//     opacity: .8;
-// }
-// .chat-container:nth-child(3) {
-//     opacity: .6;
-// }
-// .chat-container:nth-child(2) {
-//     opacity: .4;
-// }
+
+.chat-container ion-card {
+      border-radius: 30px 0px 30px 30px;
+}
+
+.chat-container ion-card:nth-child(4) {
+    opacity: .8;
+}
+.chat-container ion-card:nth-child(3) {
+    opacity: .7;
+}
+.chat-container ion-card:nth-child(2) {
+    opacity: .5;
+}
+
+.chat-container ion-card:nth-child(1) {
+    opacity: .3;
+}
 
 .chat-container ion-card:last-child {
   margin-bottom: 20px;
+}
+
+.chat-container .slogan {
+    text-transform: uppercase;
+    font-weight:bold;
+    color:#816A98;
+    font-size:.9em;
+    letter-spacing:4px;
+
 }
 
 .chat-container .name {
     text-transform: uppercase;
     font-weight:bold;
     color:#816A98;
-    font-size:.8em;
+    font-size:.6em;
     letter-spacing:2px;
 }
 
 .chat-container p {
       // background:#323035;
     padding:1.1em;
-    color:white;
-    margin: 5px 0 10px 0;
+    color:#000;
+    margin: -33px 0 -20px 0;
+    font-size: 1.2rem;
 }
 .login-logo {
   margin: 60px auto;
